@@ -113,7 +113,8 @@
     }
 
     .logo img {
-        width: 27px;
+        width: 40px;
+        
         margin-right: 0.5rem;
     }
 
@@ -130,7 +131,7 @@
     }
 
     .heading h6 {
-        color: #bababa;
+        color: #f4f3ee;
         font-weight: var(--weight-400);
         font-size: 0.75rem;
         margin-top: 0.5rem;
@@ -175,7 +176,7 @@
         top: 50%;
         transform: translateY(-50%);
         font-size: 0.95rem;
-        color: #bbb;
+        color: #f4f3ee;
         pointer-events: none;
         transition: 0.4s;
     }
