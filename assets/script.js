@@ -1,3 +1,21 @@
+//loading page
+document.addEventListener('DOMContentLoaded', function () {
+    var vesperaText = document.querySelector('.loading-page');
+    var loginContainer = document.querySelector('.box');
+
+    vesperaText.addEventListener('transitionend', function () {
+        document.querySelector('.loading-page').style.display = 'none';
+
+        // Trigger the entry animation after loading page disappears
+        loginContainer.style.display = 'block';
+    });
+
+    setTimeout(function () {
+        vesperaText.classList.add('exit-animation');
+    }, 2000);
+});
+
+//login page
 const inputs = document.querySelectorAll(".input-field");
 const toggle_btn = document.querySelectorAll(".toggle");
 const main = document.querySelector("main");
