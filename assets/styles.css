@@ -1,5 +1,6 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -12,6 +13,12 @@
     --darker-color: #2B124C;
     --darkest-color: #190D19;
     --text-color: #f4f3ee;
+    --text-muted-color: #606060;
+    --light-bgcolor: #322e35;
+    --dark-bgcolor: #262328;
+    --darker-bgcolor: #1f1d20;
+    --light-container-color: #3C3535;
+    --lighter-container-color: #5E5555;
 
     /*======= Font and typography =====*/
     --body-font: 'Open Sans', sans-serif;
@@ -19,16 +26,18 @@
     --h1-font-size: 2.5rem;
     --h2-font-size: 2.25rem;
     --h3-font-size: 1.5rem;
+    --h4-font-size: 1.25rem;
     --larger-font-size: 1.2rem;
     --large-font-size: 1.125rem;
+    --small-font-size: 0.75rem;
 
     /*========== Font weight ==========*/
     --weight-300: 300;
     --weight-400: 400;
     --weight-600: 600;
-    }
+}
 
-    /*=============== BASE ===============*/
+/*=============== BASE ===============*/
     *,
     *::before,
     *::after {
@@ -43,7 +52,7 @@
         height: 100vh;
     }
 
-    main {
+    .indexpage-main {
         width: 100%;
         min-height: 100vh;
         overflow: hidden;
@@ -53,7 +62,47 @@
         align-items: center;
         justify-content: center;
     }
-    /*=============== PRELOADER ================*/
+
+/*--------------- FOR HOME HTML ---------------*/
+
+    .homepage-body *{
+        outline: 0;
+        appearance: none;
+        border: 0;
+        text-decoration: none;
+        list-style: none;
+    }
+    .homepage-body{
+        background: linear-gradient(to top, var(--light-bgcolor), var(--dark-bgcolor), var(--darker-bgcolor));
+        /*background: linear-gradient(to top, #522B5B, #2B124C, #190D19);*/
+        user-select: none;
+        overflow-x: hidden;
+    }
+
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+    h1{
+        font-weight: 800;
+        font-size: var(--h1-font-size);
+    }
+    h2{
+        font-size: var(--h2-font-size);
+    }
+    h3{
+        font-size: var(--h3-font-size);
+    }
+    h4{
+        font-size: var(--h4-font-size);
+        color: var(--text-color);
+    }
+    small, p{
+        font-size: var(--small-font-size);
+    }
+    .text-muted{
+        color: var(--text-muted-color);
+    }
+
+/*=============== PRELOADER ================*/
     .loading-page {
         top: 0;
         left: 0;
@@ -69,7 +118,7 @@
         transform: translateY(0);
         transition: opacity 1s ease, transform 1s ease;
     }
-    
+
     #svg {
         height: 100px;
         width: 100px;
@@ -103,23 +152,24 @@
         opacity: 0;
         transform: translateY(-20px);
     }
-    /*=============== LOGIN PAGE ===============*/
-     .box {
-        position: relative;
-        width: 100%;
-        display: none;
-        max-width: 1020px;
-        height: 600px;
-        background: rgba(255,255,255,0.1);
-        border-color: white;
-        backdrop-filter: blur(5px);
-        border-radius: 15px;
-        box-shadow: 0 25px 45px rgba(0,0,0,0.2);
-        border: 1px solid rgba(255,255,255,0.5);
-        border-right: 1px solid rgba(255,255,255,0.2);
-        border-right: 1px solid rgba(255,255,255,0.2);
 
-     }
+/*=============== LOGIN PAGE ===============*/
+    .box {
+    position: relative;
+    width: 100%;
+    display: none;
+    max-width: 1020px;
+    height: 600px;
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-right: 1px solid rgba(255,255,255,0.2);
+
+    }
     .inner-box {
         position: absolute;
         width: calc(100% - 4.5rem);
@@ -159,17 +209,17 @@
         pointer-events: none;
     }
 
-    .logo {
+    .intro-logo {
         display: flex;
         align-items: center;
     }
 
-    .logo img {
+    .intro-logo img {
         width: 40px;
         margin-right: 0.5rem;
     }
 
-    .logo h4 {
+    .intro-logo h4 {
         font-size: 1rem;
         letter-spacing: -0.5px;
         color: #fff;
@@ -394,10 +444,10 @@
         border-radius: 1rem;
     }  
 
-    /*=============== BREAKPOINTS ===============*/
-    
+/*=============== BREAKPOINTS ===============*/
+
     @media (max-width: 850px) {
-    /*=============== LOADING PAGE ===============*/
+    /*------------- LOADING PAGE -------------*/
         .box {
             height: auto;
             max-width: 550px;
@@ -458,7 +508,7 @@
     }
 
     @media (max-width: 530px) {
-    /*=============== LOADING PAGE ===============*/
+    /*------------- LOADING PAGE -------------*/
         main {
             padding: 1rem;
         }
@@ -487,4 +537,199 @@
         form {
             padding: 1rem 2rem 1.5rem
         }
+    }
+
+/*=============== NAVIGATION ==============*/
+    .home-container{
+        display: grid;
+        width: 86%;
+        margin: 0 auto;
+        /*guide bg lang*/
+        background: rgba(235, 49, 49, 0.726);
+        gap: 4.8rem;
+        grid-template-columns: 18rem auto 18rem; /*size ni each section*/
+        height: 100%;
+    }
+
+    .home-logo img{
+        display: block;
+        width: 50%;                 
+    }
+    .profile-photo{ /*Not used yet?*/
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+
+    /*for the 3 sections on main*/
+    .home-container nav{
+        height: 100%;
+
+    }
+    .home-container nav{
+        background: var(--light-container-color);
+        height: 100vh;
+    }
+    .home-container .top{
+        /*background: white;*/
+        background: var(--light-container-color);
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1.4rem;
+    }
+    .home-logo{
+        display: flex;
+        gap: .8rem;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-logo img{
+        width: rem;
+        height: 4rem;
+    }
+    .home-logo h2{
+        /*wala pa gradient kulay :'(*/
+        color: black;
+    }
+    .home-container .close{
+        display: none; /*UNHIDE MO*/
+    }
+
+    .nav-container{
+        display: flex;
+        flex-direction: column;
+        height: 86vh;
+        position: relative;
+        top: 3rem;
+    }
+    .nav-container .nav-user{
+        position: absolute;
+        bottom: 2rem;
+        width: 100%;
+    }
+
+    .nav-btn{
+        font-size: 36px;
+    }
+    .nav-btn, .nav-user, .post-btn{
+        color: var(--text-color);
+    }
+    .nav-btn, .nav-user{
+        display: flex;
+        margin: .5rem 2.5rem;
+        gap: 1rem;
+        align-items: center;
+        position: relative;
+        height: 3.7rem;
+        transition: all 200ms ease;
+    }
+    .nav-btn i, .nav-btn h3{
+        transition: all 300ms ease;
+    }
+    .nav-btn:hover{
+        background: var(--dark-bgcolor);
+        color: var(--light-color); /*tentative*/
+        margin-right: 0;
+        font-weight: 750;
+        width: 86%;
+        border-radius: 30px 0 0 30px;
+    }
+    .nav-btn:before:hover{
+        content: "";
+        width: 6px;
+    }
+    .nav-btn:hover i{
+        margin-left: 1rem;
+    }
+
+    .post-btn{
+         /*wala pa gradient kulay :'(*/
+        background-color: rebeccapurple;
+        margin-left: 23px;
+        margin-top: 23px;
+        width: 239px;
+        border-radius: 197px;
+        padding: 1rem;
+    }
+    .post-btn h3{
+        font-size: 16px;
+        font-weight: 700;
+    }
+    nav h3, .post-btn{
+        font-weight: 500;
+    }
+
+/*=============== HOMEPAGE ==============*/
+    .homepage-main{
+        /*margin-top: 1.4rem;*/
+    }
+    .feed-tab{
+        display: flex;
+        background: var(--light-container-color);
+        padding: 1rem;
+        margin: 15px auto;
+        border-radius: 30px;
+    }
+    .feed-tab h4{
+        padding: 5px 10px;
+        margin: auto;
+    }
+
+    .content-container{
+        background-color: green;
+        /*height: 100%;*/
+    }
+    .post-container{
+        gap: 1.6rem;
+        margin: 15px auto;
+        background: var(--light-container-color);
+        border-radius: 30px;
+    }
+
+    .sidecontent-container{
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 1rem;
+        width: 100%;
+    }
+    .search-container{
+        gap: 1.6rem;
+        background-color: var(--lighter-container-color);
+        display: flex;
+        padding: 1rem;
+        margin: 15px auto;
+        border-radius: 30px;
+    }
+
+    /*------------- RECOMMENDED USER PAGE -------------*/
+    /*WALA PA TOO AYAW LUMABAS WAIT LANG*/
+    .tofollow-container{
+        gap: 1.6rem;
+        background-color: var(--light-container-color);
+        display: flex;
+        padding: 1rem;
+        margin: 15px auto;
+        border-radius: 30px;
+        height: 44vh;
+    }
+    .tofollow-user{
+        /*background-color: pink;*/
+    }
+
+    /*------------- TREND CONTENT PAGE -------------*/
+    .trend-container{
+        gap: 1.6rem;
+        background-color: var(--light-container-color);
+        display: flex;
+        padding: 1rem;
+        margin: 15px auto;
+        border-radius: 30px;
+        height: 44vh;
+    }
+    .trend-content{
+        /*background-color: pink;*/
     }
