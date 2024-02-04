@@ -1,5 +1,5 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url('https://fonts.googleapis.com/css2?family=OpenSans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -64,21 +64,22 @@
         gap: 1.5rem;
         align-items: center;
         justify-content: center;
+
         opacity: 1;
         transform: translateY(0);
         transition: opacity 1s ease, transform 1s ease;
     }
     
-    .logo {
-        height: 10px;
-        width: 75px;
+    #svg {
+        height: 100px;
+        width: 100px;
         stroke: #fff;
         fill-opacity: 0;
-        margin-left: 40px;
-        stroke-width: 3px;
+        stroke-width: 5px;
         stroke-dasharray: 4500;
         animation: draw 4s ease;
     }
+
 
     @keyframes draw {
         0% {
@@ -165,7 +166,6 @@
 
     .logo img {
         width: 40px;
-        
         margin-right: 0.5rem;
     }
 
@@ -393,3 +393,4 @@
         background-color: #fff;
         border-radius: 1rem;
     }  
+    /*=============== BREAKPOINTS ===============*/
