@@ -55,3 +55,7 @@ function moveSlider() {
 bullets.forEach((bullet) => {
     bullet.addEventListener("click", moveSlider);
 });
+
+document.getElementById("clickable-text").addEventListener("click", function() {
+    this.classList.toggle("clicked");
+});

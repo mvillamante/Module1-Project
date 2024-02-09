@@ -23,8 +23,32 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Authentication middleware
-function authenticate(username, password) { // user this for sign in and log in page
-  return users.find(u => u.username === username && u.password === password);
+document.addEventListener('DOMContentLoaded', function () {
+  const signInForm = document.getElementById('signInForm');
+  const errorMessage = document.getElementById('errorMessage');
+
+  signInForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const username = document.getElementById('usernameInput').value;
+    const password = document.getElementById('passwordInput').value;
+
+    const user = authenticate(username, password);
+
+    if(user) {
+      window.location.href = 'home.html';
+    } else {
+      errorMessage.style.display = 'block';
+    }
+  });
+});
+
+function authenticate(username, password) {
+  // Find a user with matching username and password
+  const user = users.find(u => u.username === username && u.password === password);
+  
+  // Return true if user is found (authenticated), otherwise return false (not authenticated)
+  return user !== undefined;
 }
 
 app.post('/postTweet', (req, res) => {
