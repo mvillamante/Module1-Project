@@ -57,31 +57,21 @@
         <div class="feed-container">
           <div class="post-container">
             <div class="content-post">
-              <img alt="user-img">
-              <div class="user-text unpost">What's on your mind?</div>
+              <!----<img alt="user-img">---->
+              <i class="fa fa-user-circle" id="placeholder-user"><span id="username">Logged</span></i> <!--Remove this placeholder for User to apply actual user profile-->
+              <textarea name="user-post" id="userPost" placeholder="What's on your mind?" cols="30" rows="5" maxlength="180"></textarea>
             </div>
             <div class="btn-container">
-              <button>gallery</button>
-              <button>gif</button>
-              <button>stats</button>
-              <button>emoji</button>
-              <button>calendar</button>
-              <button>location</button>
-              <button>Post</button>
+              <button><i class="fa fa-image"></i></button> 
+              <button><i class="fa fa-giphy" id="gif">GIF</i></button>
+              <button><i class="fa fa-bar-chart"></i></button>
+              <button><i class="fa fa-smile-o"></i></button>
+              <button><i class="fa fa-calendar"></i></button>
+              <button><i class="fa fa-map-marker"></i></button>
+              <button id="post" onclick="postTweet()">Post</button>
             </div>
           </div>
-          <div class="post-container">
-            <div class="content-post">
-              <img alt="user-img">
-              <div class="user-text unpost">lorem ipsum dolor sit amet</div>
-            </div>
-            <div class="btn-container">
-              <button>reply</button>
-              <button>repost</button>
-              <button>heart </button>
-              <button>share</button>
-            </div>
-          </div>
+          <div id="post-container"></div> 
         </div>
       </div>
       
@@ -102,7 +92,9 @@
       </div>
     </div>
   </div>
-  
-  <script src="assets/script.js"></script>
+
+  <script src="assets/home-API.js"></script>
+  <script src="assets/home-functions.js"></script>
+
 </body>
 </html>

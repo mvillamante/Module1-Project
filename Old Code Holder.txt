@@ -1,0 +1,14 @@
+<==={ Previous Post Container Contents }==>
+
+<div class="post-container">
+  <div class="content-post">
+    <!---<img alt="user-img">--->
+    <i class="fa fa-user-circle" id="placeholder-user">Follow/NotFollowed_User</i> <!--Remove this placeholder for User to apply actual user profile-->
+    <div class="user-text unpost">lorem ipsum dolor sit amet</div>
+  </div>
+  <div class="btn-container">
+    <button class="comment-btn"><i class="fa fa-comment"></i><span class="comment-count">0</span></button>
+    <button class="retweet-btn"><i class="fa fa-retweet"></i><span class="retweet-count">0</span></button>
+    <button class="like-btn"><i class="fa fa-heart"></i><span class="like-count">0</span></button>
+    <button class="share-btn"><i class="fa fa-share"></i></button>
+</div>
