@@ -44,7 +44,7 @@ function displayTweet(tweet) {
     <strong>${tweet.username}</strong><br>
     <small>${timestamp}</small> 
     <p>${tweet.tweet}</p><br>
-    <div class="btn-container">
+    <div class="btn-container-tweet">
         <button class="comment-btn" onclick="CommentButtonClick(this)">
         <i class="fa fa-comment"></i><span class="comment-count">0</span>
         </button>

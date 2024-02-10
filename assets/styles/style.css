@@ -772,6 +772,26 @@
         background: #262328;
     }
 
+    .btn-container-tweet button{
+        background-color: transparent;
+        color:white;
+        display: inline-block;
+        margin-right: 18px;
+        padding: 8px 8px;
+        justify-content: center;
+
+    }
+
+    .btn-container-tweet button:hover{
+        background: linear-gradient(to bottom right, rgba(231, 73, 206, 50%), rgba(188, 47, 237, 75%), rgba(143, 60, 225, 83.75%), rgba(70, 49, 92, 100));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        transform: scale(1.1);
+        cursor: pointer;
+
+    }
+
     .content-container{
         background-color: rgb(38,35,40);
         max-height: 80%;
