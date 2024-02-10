@@ -49,3 +49,19 @@ function LikeButtonClick(buttonElement) {
 function updateCount(element, count) {
   element.textContent = count;
 }
+
+function enablePostButton() {
+  var postButton = document.getElementById('post');
+  postButton.disabled = false;
+}
+
+
+function checkInput() {
+  var userInput = document.getElementById('userPost').value.trim();
+  var postButton = document.getElementById('post');
+  if (userInput.length > 0) {
+      postButton.disabled = false;
+  } else {
+      postButton.disabled = true;
+  }
+}

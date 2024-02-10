@@ -63,3 +63,5 @@ function displayTweet(tweet) {
 
 setInterval(loadTweets, 5000); // Refresh tweets every 5 seconds: this can be changed instead when page load or refreshed
 loadTweets(); // Load tweets on page load
+
+

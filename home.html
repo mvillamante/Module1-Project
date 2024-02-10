@@ -58,8 +58,8 @@
           <div class="post-container">
             <div class="content-post">
               <!----<img alt="user-img">---->
-              <i class="fa fa-user-circle" id="placeholder-user"><span id="username">Logged</span></i> <!--Remove this placeholder for User to apply actual user profile-->
-              <textarea name="user-post" id="userPost" placeholder="What's on your mind?" cols="30" rows="5" maxlength="180"></textarea>
+              <i class="fa fa-user-circle" id="placeholder-user"><span id="username">User</span></i> <!--Remove this placeholder for User to apply actual user profile-->
+              <textarea name="user-post" id="userPost" placeholder="What's on your mind?" cols="30" rows="5" maxlength="180" oninput="checkInput()" onclick="enablePostButton()"></textarea>
             </div>
             <div class="btn-container">
               <button><i class="fa fa-image"></i></button> 
@@ -68,8 +68,8 @@
               <button><i class="fa fa-smile-o"></i></button>
               <button><i class="fa fa-calendar"></i></button>
               <button><i class="fa fa-map-marker"></i></button>
-              <button id="post" onclick="postTweet()">Post</button>
             </div>
+              <button class="btn-container-post" id="post" onclick="postTweet()" disabled>Post</button>
           </div>
           <div id="post-container"></div> 
         </div>
